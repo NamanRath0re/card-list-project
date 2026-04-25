@@ -18,16 +18,16 @@ const FeedbackModal = () => {
     const handleSubmit = (e) => {
         e.preventDefault()
 
-        const emailRegex = "/^[\w\-\.]+@([\w-]+\.)+[\w-]{2,}$/gm"
+        const emailRegex = "^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$"
 
         if(!form.name || !form.email){
             alert("fill all fields")
             return
         }
-        if(!emailRegex.test(form.email)){
-            alert("Invalid email")
-            return
-        }
+        // if(!emailRegex.test(form.email)){
+        //     alert("Invalid email")
+        //     return
+        // }
         setSubmitted(true)
 
         setTimeout(()=>{
