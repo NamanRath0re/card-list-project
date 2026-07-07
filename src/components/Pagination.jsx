@@ -40,7 +40,7 @@ const Pagination = () => {
               key={page}
               onClick={()=> actions.setPage(page)}
               className={`w-9 h-9 rounded-lg border text-sm font-medium ${ 
-                page === currentPage ? "bg-red-500 border-red-500 text-white shadow-lg"
+                page === currentPage ? "bg-gray-100 border-gray-500 text-gray-800 shadow-lg"
                 : "border-gray-600 bg-gray-800 text-gray-400"
               }`}
             >{page}</button>

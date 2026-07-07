@@ -1,7 +1,6 @@
 import axios from "axios";
 import { createContext, useContext, useEffect, useReducer } from "react";
 
-
 const CARDS_PER_PAGE = 6;
 
 const initialState = {
@@ -21,7 +20,7 @@ function appReducer(state,action){
             return{...state, allPosts: action.payload, totalPages, isloading: false}
         }
         case "SET_LOADING":
-            return { ...state,  isLoading: action.payload}
+            return { ...state,  isloading: action.payload}
         case "SET_PAGE":
             return { ...state, currentPage: action.payload }
         case "REMOVE_POST": {
@@ -63,7 +62,7 @@ export function AppProvider({children}){
                 const posts =Array.isArray(json) ? json : json.data ?? []; 
                 dispatch({ type: "SET_POSTS", payload: posts})
             } catch (error) {
-                dispatch({type: "SET_LOADING", payload:false})
+                dispatch({type: "SET_LOADING", payload: { isloading: false }})
             }
         },5000)
         return () => clearTimeout(timer)
@@ -75,6 +74,7 @@ export function AppProvider({children}){
         toggleView : ()=> dispatch({type : "TOGGLE_VIEW"}),
         toggleFeedback : () => dispatch({ type : "TOGGLE_FEEDBACK"}),
         closeFeedback : () => dispatch({ type : "CLOSE_FEEDBACK"}),
+        isLoading : (isloading) => dispatch({ type: "SET_LOADING", payload: { isloading }})
     }
 
     return (

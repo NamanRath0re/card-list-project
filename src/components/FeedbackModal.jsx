@@ -56,10 +56,10 @@ export default function FeedbackModal() {
       />
       <div className="fixed inset-0 z-50 flex items-center justify-center p-4 pointer-events-none">
         <div className="w-full max-w-md bg-gray-800 border border-gray-700 rounded-2xl shadow-2xl pointer-events-auto animate-slide-up">
-          {/* Header */}
+
           <div className="flex items-center justify-between px-6 pt-6 pb-4 border-b border-gray-700">
             <div>
-              <h2 className="text-gray-100 text-lg font-semibold">We Are Listening 👂</h2>
+              <h2 className="text-gray-100 text-lg font-semibold">We Are Listening </h2>
               <p className="text-gray-500 text-xs mt-0.5">Your feedback helps us improve PostBoard</p>
             </div>
             <button
@@ -70,7 +70,6 @@ export default function FeedbackModal() {
             </button>
           </div>
 
-          {/* Success */}
           {submitted ? (
             <div className="flex flex-col items-center justify-center py-14 gap-3 animate-fade-in">
               <CheckCircle2 size={48} className="text-green-400" />
